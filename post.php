@@ -18,8 +18,6 @@ class Post
 
 }
 
-// $value = true;
-
 $posts = [
     new Post('first', false, 'Adam'),
     new Post('second', true, 'Martin'),
@@ -27,15 +25,34 @@ $posts = [
     new Post('fourth', false, 'Lenka')
 ];
 
+
+// returns objects that are true
 // $publishedPosts = array_filter($posts, function ($post) {
 //     return $post->published;
 // });
+
+
 
 // $modified = array_map(function ($post) {
 //     return 'foobar';
 // }, $posts);
 
-// $titles = array_column($posts, 'author'); // returns array, where all the authors are
+
+//  returns all array titles
+// $titles = array_column($posts, 'title');
 
 
-dd($titles);
+// lze vratit pouze 3 parametry
+$together = array_column($posts, 'author', 'title');
+
+
+// return all posts items as array 
+$posts = array_map( function ($post) {
+    return (array) $post;
+}, $posts);
+
+
+// return all authors
+// $authors = array_column($posts, 'author');  
+
+dd($together);
