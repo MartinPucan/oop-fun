@@ -9,13 +9,12 @@ class Post
     public $published;
     public $author;
 
-    public function __construct($title, $published, $author)
+    public function __construct(string $title, bool $published, string $author)
     {
         $this->title = $title;
         $this->published = $published;
         $this->author = $author;
     }
-
 }
 
 $posts = [
@@ -25,21 +24,21 @@ $posts = [
     new Post('fourth', false, 'Lenka')
 ];
 
-
 // returns objects that are true
-// $publishedPosts = array_filter($posts, function ($post) {
-//     return $post->published;
-// });
+$publishedPosts = array_filter($posts, function ($post) {
+    return $post->published;
+});
+
+// returns $post as array, all value will be 'foobar' 
+$modified = array_map(function ($post) {
+    return 'foobar';
+}, $posts);
 
 
-
-// $modified = array_map(function ($post) {
-//     return 'foobar';
-// }, $posts);
-
+$titless = new Post('ahoj', false, 'hi');
 
 //  returns all array titles
-// $titles = array_column($posts, 'title');
+$titles = array_column($posts, 'title');
 
 
 // lze vratit pouze 3 parametry
@@ -53,6 +52,11 @@ $posts = array_map( function ($post) {
 
 
 // return all authors
-// $authors = array_column($posts, 'author');  
+$authors = array_column($posts, 'author');  
 
-dd($together);
+//  return two information about server
+$info = [
+    $_SERVER['REQUEST_URI'], $_SERVER['HTTP_CONNECTION'] 
+];
+
+dd($posts);

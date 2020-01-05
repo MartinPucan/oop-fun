@@ -1,11 +1,19 @@
 <?php
 
-// array_reduce
+// array_chunk(input, size)
 
-// array_key_exists
+// array_reverse(array)
 
-// array_filter
+// array_search(needle, haystack)
 
-// array_map
+// array_push(array, var)
+
+// array_reduce(input, function)
+
+// array_key_exists(key, array)
+
+// array_filter(input)
+
+// array_map(callback, arr1)
 
 // array_column(input, column_key)
