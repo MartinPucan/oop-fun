@@ -3,7 +3,6 @@
 require 'functions.php';
 
 class Post
-
 {
     public $title;
     public $published;
@@ -25,7 +24,7 @@ $posts = [
 ];
 
 // returns objects that are true
-$publishedPosts = array_filter($posts, function ($post) {
+$isPublishedPosts = array_filter($posts, function ($post) {
     return $post->published;
 });
 
