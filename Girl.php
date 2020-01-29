@@ -1,6 +1,8 @@
 <?php
+declare(strict_types=1);
 
-class Girl {
+class Girl
+{
 	public const SMALL = 1;
 	public const MEDIUM = 2;
 	public const BIG = 3;
@@ -8,7 +10,7 @@ class Girl {
 	/** @var bool */
 	private $isMoody;
 
-	/** @var string */
+	/** @var int */
 	private $boobs;
 
 	/** @var string */
@@ -23,7 +25,7 @@ class Girl {
 	/** @var bool */
 	private $isGoldDigger;
 
-	public function getBoobs(): string
+	public function getBoobs(): int
 	{
 		return $this->boobs;
 	}
@@ -119,7 +121,7 @@ class Guy
 			$girl->getBoyfriend() !== $this
 			&& $possibleGirlfriend !== null
 			&& $possibleGirlfriend->getBoyfriend() === $this
-			&& rand(0, 2) === 1
+//			&& rand(0, 2) === 1
 		) {
 			$possibleGirlfriend->slapGuy("How you can do something like this to me?\n");
 		}
@@ -144,14 +146,15 @@ class Guy
 
 
 $guy = new Guy;
-
 $girl = new Girl;
+$girl2 = new Girl;
+
 $girl->setIsGoldDigger(false);
 
-$girl2 = new Girl;
 $girl2->setIsGoldDigger(false);
 
 $guy->setGirlfriend($girl);
+
 $girl->setBoyfriend($guy);
 
 $guy->askGirlToShowTits($girl2);
