@@ -87,11 +87,11 @@ class Girl
 
 	public function showTits(): void
 	{
-		echo 'Here you go';
+		echo "Here you go\n";
 	}
 
 	public function slapGuy(string $comment = ''): void {
-		echo "You obscene piece of shit! Fuck you! {$comment}";
+		echo "You obscene piece of shit! Fuck you! {$comment}\n";
 	}
 }
 
@@ -121,9 +121,14 @@ class Guy
 			$girl->getBoyfriend() !== $this
 			&& $possibleGirlfriend !== null
 			&& $possibleGirlfriend->getBoyfriend() === $this
-//			&& rand(0, 2) === 1
 		) {
-			$possibleGirlfriend->slapGuy("How you can do something like this to me?\n");
+			$possibleGirlfriend->slapGuy("How you can do something like this to your girlfriend?\n");
+		}
+
+		if ($girl->getBoobs() >= Girl::MEDIUM) {
+			echo "Ok, I want you!\n";
+		} else {
+			echo "Ehhh, nice tits I guess.\n";
 		}
 
 		if ($girl->getBoyfriend() === $this || $girl->isGoldDigger()) {
@@ -150,8 +155,10 @@ $girl = new Girl;
 $girl2 = new Girl;
 
 $girl->setIsGoldDigger(false);
+$girl->setBoobs(Girl::SMALL);
 
-$girl2->setIsGoldDigger(false);
+$girl2->setIsGoldDigger(true);
+$girl2->setBoobs(Girl::BIG);
 
 $guy->setGirlfriend($girl);
 
