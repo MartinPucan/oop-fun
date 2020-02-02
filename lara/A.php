@@ -2,9 +2,9 @@
 
 class A
 {
-	private $property = 'default value'; // kdyby zde byla globalni promenna (public), trida B by ji prepsala
+	private $property = 'default value'; // kdyby zde byla globalni promenna (public), trida B by ji prepsala, pouze v pripade, ze by byla take public
 
-	final public function function2()
+	public function function2()
 	{
 		echo 'Property $property has value ' . $this->property . "\n";
 	}
