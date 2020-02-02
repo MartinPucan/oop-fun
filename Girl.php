@@ -145,7 +145,7 @@ class Guy
 
 	public function setGirlfriend(Girl $girlfriend): void
 	{
-		$this->girlfriend = $girlfriend;
+		$this->girlfriend = $girlfriend; 
 	}
 }
 
