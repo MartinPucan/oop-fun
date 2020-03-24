@@ -1,19 +1,90 @@
 <?php
+declare(strict_types=1);
 
-// array_chunk(input, size)
+class ArrayFunctions
+{
+//	public $array = [];
+//
+//	public function __construct($array)
+//	{
+//		$this->array = $array;
+//	}
 
-// array_reverse(array)
+	public function fillArray($start, $stop)
+	{
+		return range($start, $stop);
+	}
 
-// array_search(needle, haystack)
+	public function dd($value)
+	{
+		echo '<pre>';
+		var_dump($value);
+		echo '</pre>';
+	}
 
-// array_push(array, var)
+	public function range($start, $stop)
+	{
+		$array = [];
 
-// array_reduce(input, function)
+		if ($stop > $start) {
+			for (; $start <= $stop; $start++) {
+				$array[] = $start;
+			}
+		} else {
+			for (; $stop <= $start; $stop++) {
+				$array[] = $stop;
+			}
+		}
 
-// array_key_exists(key, array)
+		return $array;
+	}
 
-// array_filter(input)
+	public function __toString()
+	{
+		return __CLASS__ . PHP_EOL;
+	}
 
-// array_map(callback, arr1)
+}
 
-// array_column(input, column_key)
+//$output = new ArrayFunctions($array);
+//
+//$output->range(1, 8);
+//print_r($output);
+
+$name = new ArrayFunctions();
+
+echo strval(new ArrayFunctions());
+echo "The class name is " . get_class($name);
+
+
+
+
+
+
+//$start = -7;
+//$stop = 1;
+//
+//$array = [];
+//
+//if ($stop > $start) {
+//	for (; $start <= $stop; $start++) {
+//		$array[] = $start;
+//	}
+//} else {
+//	for (; $stop <= $start; $stop++) {
+//		$array[] = $stop;
+//	}
+//}
+//
+//print_r($array);
+
+
+//  array_chunk(input, size);
+//  array_reverse(array);
+//  array_search(needle, haystack);
+//  array_push(array, var);
+//  array_reduce(input, function);
+//  array_key_exists(key, array);
+//  array_filter(input);
+//  array_map(callback, arr1);
+//  array_column(input, column_key);
