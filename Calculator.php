@@ -33,7 +33,7 @@ class Calculator
 	}
 }
 
-$calculator = new Calculator(4.2,2);
+$calculator = new Calculator(4,2);
 
 var_dump($calculator->addition(2.4,10.3));
 var_dump($calculator->subtraction());
