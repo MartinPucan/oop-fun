@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 class Calculator
 {
-	private $num1;
-	private $num2;
+	private int $num1;
+	private int $num2;
 
 	public function __construct($num1, $num2)
 	{
@@ -19,7 +19,7 @@ class Calculator
 
 	public function subtraction()
 	{
-		return $this->num1 - $this->num2;
+		return (float)$this->num1 - (float)$this->num2;
 	}
 
 	public function multiplication()
@@ -33,7 +33,7 @@ class Calculator
 	}
 }
 
-$calculator = new Calculator(4,2);
+$calculator = new Calculator(4.2,2);
 
 var_dump($calculator->addition(2.4,10.3));
 var_dump($calculator->subtraction());
