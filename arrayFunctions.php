@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 class ArrayFunctions
 {
-//	public $array = [];
-//
-//	public function __construct($array)
-//	{
-//		$this->array = $array;
-//	}
+	public $array = [];
+
+	public function __construct($array)
+	{
+		$this->array = $array;
+	}
 
 	public function fillArray($start, $stop)
 	{
@@ -24,8 +24,6 @@ class ArrayFunctions
 
 	public function range($start, $stop)
 	{
-		$array = [];
-
 		if ($stop > $start) {
 			for (; $start <= $stop; $start++) {
 				$array[] = $start;
@@ -35,8 +33,6 @@ class ArrayFunctions
 				$array[] = $stop;
 			}
 		}
-
-		return $array;
 	}
 
 	public function __toString()
@@ -46,15 +42,17 @@ class ArrayFunctions
 
 }
 
-//$output = new ArrayFunctions($array);
+$array = [];
+
+$output = new ArrayFunctions($array);
+
+$output->range(2, 10);
+print_r($output);
+
+//$name = new ArrayFunctions();
 //
-//$output->range(1, 8);
-//print_r($output);
-
-$name = new ArrayFunctions();
-
-echo strval(new ArrayFunctions());
-echo "The class name is " . get_class($name);
+//echo strval(new ArrayFunctions());
+//echo "The class name is " . get_class($name);
 
 
 
